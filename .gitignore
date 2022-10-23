@@ -13,6 +13,9 @@
 **/dist
 **/node_modules
 **/typechain
+**/types
+**/hardhat_artifacts
+**/hardhat_cache
 
 # files
 *.env

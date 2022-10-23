@@ -12,3 +12,5 @@
 [license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 
 Hardhat plugin for generating a test suite structure for smart contracts
+
+// Todo

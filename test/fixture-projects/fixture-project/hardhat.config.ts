@@ -1,8 +1,7 @@
-// We load the plugin here.
 import "@nomicfoundation/hardhat-toolbox";
 import type { HardhatUserConfig } from "hardhat/types";
 
-import "../../src";
+import "../../../src";
 
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
