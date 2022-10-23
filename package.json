@@ -1,6 +1,6 @@
 {
   "name": "hardhat-test-suite-generator",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Hardhat plugin for generating test suite",
   "author": {
     "name": "Ahmed Ali",
