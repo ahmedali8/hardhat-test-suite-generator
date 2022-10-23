@@ -11,4 +11,4 @@
 [license]: https://opensource.org/licenses/MIT
 [license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 
-Hardhat plugin for generating a test suite structure for selected smart contracts
+Hardhat plugin for generating a test suite structure for smart contracts
