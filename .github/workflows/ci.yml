@@ -13,6 +13,9 @@ on:
     branches:
       - "main"
 
+  # Allow workflow to be manually run from the GitHub UI
+  workflow_dispatch:
+
 jobs:
   ci:
     runs-on: "ubuntu-latest"
@@ -24,7 +27,7 @@ jobs:
         uses: "actions/setup-node@v3"
         with:
           cache: "yarn"
-          node-version: "16"
+          node-version: "lts/*"
 
       - name: "Install the dependencies"
         run: "yarn install --immutable"
