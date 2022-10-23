@@ -1,48 +1,105 @@
 {
-  "name": "hardhat-ts-plugin-boilerplate",
+  "name": "hardhat-test-suite-generator",
   "version": "0.0.1",
-  "description": "Hardhat TypeScript plugin boilerplate",
-  "repository": "github:nomiclabs/hardhat-ts-plugin-boilerplate",
-  "author": "Nomic Labs LLC",
-  "license": "MIT",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
-  "keywords": [
-    "ethereum",
-    "smart-contracts",
-    "hardhat",
-    "hardhat-plugin"
-  ],
-  "scripts": {
-    "lint:fix": "prettier --write 'src/**/*.{js,ts}' 'test/**/*.{js,ts}' && tslint --fix --config tslint.json --project tsconfig.json",
-    "lint": "tslint --config tslint.json --project tsconfig.json",
-    "test": "mocha --exit --recursive 'test/**/*.test.ts'",
-    "build": "tsc",
-    "watch": "tsc -w",
-    "prepublishOnly": "npm run build"
+  "description": "Hardhat plugin for generating test suite",
+  "author": {
+    "name": "Ahmed Ali",
+    "url": "https://github.com/ahmedali8"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmedali8/hardhat-test-suite-generator/issues"
+  },
+  "dependencies": {
+    "@typechain/hardhat": "^6.1.3",
+    "fs-extra": "^10.1.0",
+    "hardhat": "^2.12.0",
+    "typechain": "^8.1.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/bytes": "^5.7.0",
+    "@ethersproject/providers": "^5.7.2",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@trivago/prettier-plugin-sort-imports": "^3.4.0",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.3",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "earljs": "^0.2.3",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "ethers": "^5.7.2",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "lodash": "^4.17.21",
+    "mocha": "^10.1.0",
+    "nyc": "^15.1.0",
+    "pinst": "^3.0.0",
+    "prettier": "^2.7.1",
+    "shx": "^0.3.4",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
   },
   "files": [
-    "dist/src/",
-    "src/",
+    "/dist/**/*.d.ts",
+    "/dist/**/*.d.ts.map",
+    "/dist/**/*.js",
+    "/dist/**/*.js.map",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
-  "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/fs-extra": "^5.0.4",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^8.10.38",
-    "chai": "^4.2.0",
-    "hardhat": "^2.0.0",
-    "mocha": "^7.1.2",
-    "prettier": "2.0.5",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.16.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^4.0.3"
-  },
+  "homepage": "https://github.com/ahmedali8/hardhat-test-suite-generator#readme",
+  "keywords": [
+    "bindings",
+    "blockchain",
+    "ethereum",
+    "hardhat",
+    "hardhat-plugin",
+    "smart-contracts",
+    "typechain",
+    "typescript",
+    "test-suite",
+    "mocha",
+    "chai"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "packageManager": "yarn@3.2.2",
   "peerDependencies": {
-    "hardhat": "^2.0.0"
-  }
+    "@typechain/hardhat": "6.x",
+    "hardhat": "2.x",
+    "lodash": "4.x",
+    "typechain": "8.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmedali8/hardhat-test-suite-generator"
+  },
+  "scripts": {
+    "build": "tsc --project \"./tsconfig.prod.json\"",
+    "clean": "shx rm -rf ./.nyc_output ./coverage ./dist ./coverage.json ./tsconfig.prod.tsbuildinfo",
+    "coverage": "yarn nyc --nycrc-path ./.nycrc.yml mocha",
+    "lint": "yarn lint:ts && yarn prettier:check && yarn typecheck",
+    "lint:ts": "eslint --config \"./.eslintrc.yml\" --ignore-path \"./.eslintignore\" --ext .js,.ts .",
+    "postinstall": "husky install",
+    "postpublish": "pinst --enable",
+    "prepack": "yarn build",
+    "prepublishOnly": "pinst --disable",
+    "prettier": "prettier --config \"./.prettierrc.yml\" --ignore-path \"./.prettierignore\" --write \"**/*.{js,json,md,ts,yml}\"",
+    "prettier:check": "prettier --check --config \"./.prettierrc.yml\" --ignore-path \"./.prettierignore\" \"**/*.{js,json,md,ts,yml}\"",
+    "test": "mocha --config \"./.mocharc.yml\"",
+    "typecheck": "tsc --incremental false --noEmit"
+  },
+  "types": "dist/src/index.d.ts"
 }
