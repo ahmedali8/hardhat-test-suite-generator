@@ -79,7 +79,7 @@ module.exports = {
   testSuiteGenerator: {
     // What contracts to exclude from the test suite
     // Defaults to []
-    contracts: ["MyToken", "ERC20"],
+    excludeContracts: ["MyToken", "ERC20"],
     // Out directory name for the test suite
     // Must not contain "/"
     // Defaults to "test"
