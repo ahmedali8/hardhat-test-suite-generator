@@ -1,6 +1,9 @@
 check-coverage: false
 extends: "@istanbuljs/nyc-config-typescript"
-include: "src/**/*"
+include:
+  - "src/**/*"
+exclude:
+  - "src/utils/string.ts"
 report-dir: "coverage"
 reporter:
   - "html"
