@@ -113,7 +113,7 @@
     "postinstall": "husky install",
     "postpublish": "pinst --enable",
     "prepack": "yarn build",
-    "prepublishOnly": "pinst --disable",
+    "prepublish": "pinst --disable",
     "prettier": "prettier --config \"./.prettierrc.yml\" --ignore-path \"./.prettierignore\" --write \"**/*.{js,json,md,ts,yml}\"",
     "prettier:check": "prettier --check --config \"./.prettierrc.yml\" --ignore-path \"./.prettierignore\" \"**/*.{js,json,md,ts,yml}\"",
     "test": "mocha --config \"./.mocharc.yml\"",
