@@ -1,3 +1,3 @@
-import debugLib from "debug";
-
-export const debug = debugLib("debug");
+export const debug = (...param: any) => {
+  if (process.env.DEBUG && Boolean(process.env.DEBUG) === true) console.log(param);
+};
