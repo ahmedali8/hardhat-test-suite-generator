@@ -29,8 +29,16 @@ types.
 
 First, install the plugin and its peer dependencies.
 
+if you are using `Yarn`, run:
+
 ```sh
 yarn add --dev hardhat-test-suite-generator @nomicfoundation/hardhat-toolbox
+```
+
+or if you are using `npm`, run:
+
+```sh
+npm install --save-dev hardhat-test-suite-generator @nomicfoundation/hardhat-toolbox
 ```
 
 Second, import the plugin in your `hardhat.config.ts`:
@@ -83,10 +91,16 @@ module.exports = {
 
 ## Usage
 
-Run this:
+If you are using `Yarn`, run this:
 
 ```sh
 yarn hardhat generate-test-suite
+```
+
+or if you are using `npm`, run this:
+
+```sh
+npx hardhat generate-test-suite
 ```
 
 And go look what you got in the `test` directory. For excluding any contract or renaming the test
