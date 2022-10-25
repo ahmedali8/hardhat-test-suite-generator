@@ -65,6 +65,13 @@ task(TASK_GENERATE_TEST_SUITE, "Generates a test suite structure for smart contr
       );
     }
 
+    // const outDirName: string = hre.config.testSuiteGenerator.outDirName;
+
+    // if (fsExtra.existsSync(join(cwd, outDirName))) {
+    //   console.log(`Test Suite already exists!`);
+    //   return;
+    // }
+
     const relativePathToContractsSources: string = relative(cwd, hre.config.paths.sources);
     const artifactFiles = glob(cwd, [
       `${hre.config.paths.artifacts}/${

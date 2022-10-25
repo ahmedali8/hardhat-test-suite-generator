@@ -106,12 +106,20 @@ yarn add --dev \
   @nomiclabs/hardhat-ethers \
   @nomiclabs/hardhat-etherscan \
   @typechain/ethers-v5 \
+  @types/chai \
+  @types/mocha \
   chai \
   hardhat-gas-reporter \
   solidity-coverage \
   ts-node \
   typescript
 ```
+
+## Tips
+
+- See how the plugin is used in
+  [hardhat-ts-template](https://github.com/ahmedali8/hardhat-ts-template), and
+  [foundry-hardhat-template](https://github.com/ahmedali8/foundry-hardhat-template).
 
 ## License
 
