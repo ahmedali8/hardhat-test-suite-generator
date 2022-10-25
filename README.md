@@ -96,7 +96,8 @@ Run this:
 yarn hardhat generate-test-suite
 ```
 
-And go look what you got in the `test` directory. For excluding any contract or renaming the test folder name refer to the [configuration](./README.md#configuration) section above.
+And go look what you got in the `test` directory. For excluding any contract or renaming the test
+folder name refer to the [configuration](./README.md#configuration) section above.
 
 ## License
 
