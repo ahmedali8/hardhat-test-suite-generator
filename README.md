@@ -92,6 +92,27 @@ yarn hardhat generate-test-suite
 And go look what you got in the `test` directory. For excluding any contract or renaming the test
 folder name refer to the [configuration](./README.md#configuration) section above.
 
+## FAQ
+
+### I get an error when using Yarn
+
+make sure these packages are present in your `dependencies` or `devDependencies`:
+
+```sh
+yarn add --dev \
+  @nomicfoundation/hardhat-chai-matchers \
+  @nomicfoundation/hardhat-network-helpers \
+  @nomicfoundation/hardhat-toolbox \
+  @nomiclabs/hardhat-ethers \
+  @nomiclabs/hardhat-etherscan \
+  @typechain/ethers-v5 \
+  chai \
+  hardhat-gas-reporter \
+  solidity-coverage \
+  ts-node \
+  typescript
+```
+
 ## License
 
 [MIT](./LICENSE.md) © Ahmed Ali
