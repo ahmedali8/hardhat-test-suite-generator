@@ -33,14 +33,7 @@ First, install the plugin and its peer dependencies.
 yarn add --dev hardhat-test-suite-generator @nomicfoundation/hardhat-toolbox
 ```
 
-Second, import the plugin in your `hardhat.config.js`:
-
-```javascript
-require("@nomicfoundation/hardhat-toolbox");
-require("hardhat-test-suite-generator");
-```
-
-Or, if you are using TypeScript, in your `hardhat.config.ts`:
+Second, import the plugin in your `hardhat.config.ts`:
 
 ```typescript
 import "@nomicfoundation/hardhat-toolbox";
