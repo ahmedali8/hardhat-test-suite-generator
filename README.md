@@ -30,7 +30,7 @@ types.
 First, install the plugin and its peer dependencies.
 
 ```sh
-$ yarn add --dev hardhat-test-suite-generator @nomicfoundation/hardhat-toolbox
+yarn add --dev hardhat-test-suite-generator @nomicfoundation/hardhat-toolbox
 ```
 
 Second, import the plugin in your `hardhat.config.js`:
@@ -90,16 +90,13 @@ module.exports = {
 
 ## Usage
 
-To use this plugin you need to decide which contracts you would like to be part of the package
-deployed to the registry. Refer to the [configuration](./README.md#configuration) section above.
-
-Then run this:
+Run this:
 
 ```sh
 yarn hardhat generate-test-suite
 ```
 
-And go look what you got in the `test` directory.
+And go look what you got in the `test` directory. For excluding any contract or renaming the test folder name refer to the [configuration](./README.md#configuration) section above.
 
 ## License
 
