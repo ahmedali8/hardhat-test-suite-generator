@@ -1,6 +1,6 @@
 {
   "name": "hardhat-test-suite-generator",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Hardhat plugin for generating test suite",
   "author": {
     "name": "Ahmed Ali",
@@ -119,5 +119,5 @@
     "test": "mocha --config \"./.mocharc.yml\"",
     "typecheck": "tsc --incremental false --noEmit"
   },
-  "types": "dist/src/index.d.ts"
+  "types": "./dist/index.d.ts"
 }
