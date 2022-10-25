@@ -1,6 +1,6 @@
 {
   "name": "hardhat-test-suite-generator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Hardhat plugin for generating test suite",
   "author": {
     "name": "Ahmed Ali",
@@ -112,7 +112,7 @@
     "lint:ts": "eslint --config \"./.eslintrc.yml\" --ignore-path \"./.eslintignore\" --ext .js,.ts .",
     "postinstall": "husky install",
     "postpublish": "pinst --enable",
-    "prepack": "yarn prepublish && yarn build && yarn postpublish",
+    "prepack": "yarn build",
     "prepublish": "pinst --disable",
     "prettier": "prettier --config \"./.prettierrc.yml\" --ignore-path \"./.prettierignore\" --write \"**/*.{js,json,md,ts,yml}\"",
     "prettier:check": "prettier --check --config \"./.prettierrc.yml\" --ignore-path \"./.prettierignore\" \"**/*.{js,json,md,ts,yml}\"",
