@@ -231,7 +231,7 @@ export function genIndexFile(contracts: Contract[], config: HelperConfig): FileD
       import type { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
       import { ethers } from "hardhat";
 
-      import type { Signers } from "${join("..", "shared", "types")}";
+      import type { Contracts, Signers } from "${join("..", "shared", "types")}";
       ${contracts
         .map((c) => c.name)
         .map((n) => `import { test${pascalCase(n)} } from "./${hyphenate(n)}/${pascalCase(n)}";`)
@@ -240,6 +240,7 @@ export function genIndexFile(contracts: Contract[], config: HelperConfig): FileD
       describe("Unit tests", function () {
         before(async function () {
           this.signers = {} as Signers;
+          this.contracts = {} as Contracts;
 
           const signers: SignerWithAddress[] = await ethers.getSigners();
           this.signers.deployer = signers[0];
