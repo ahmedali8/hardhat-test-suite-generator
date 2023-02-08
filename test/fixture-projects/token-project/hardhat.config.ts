@@ -11,7 +11,7 @@ const config: HardhatUserConfig = {
     sources: "./src",
     tests: "./hardhat_test",
   },
-  solidity: "0.8.17",
+  solidity: "0.8.18",
   typechain: {
     outDir: "types",
     target: "ethers-v5",
