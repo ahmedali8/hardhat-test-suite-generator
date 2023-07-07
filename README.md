@@ -115,11 +115,12 @@ make sure these packages are present in your `dependencies` or `devDependencies`
 ```sh
 yarn add --dev \
   @nomicfoundation/hardhat-chai-matchers \
+  @nomicfoundation/hardhat-ethers \
   @nomicfoundation/hardhat-network-helpers \
   @nomicfoundation/hardhat-toolbox \
-  @nomiclabs/hardhat-ethers \
-  @nomiclabs/hardhat-etherscan \
-  @typechain/ethers-v5 \
+  @nomicfoundation/hardhat-verify \
+  @typechain/ethers-v6 \
+  @typechain/hardhat \
   @types/chai \
   @types/mocha \
   chai \
