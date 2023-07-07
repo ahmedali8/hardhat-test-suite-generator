@@ -4,7 +4,7 @@
     "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["es6"],
+    "lib": ["es2020"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
@@ -13,7 +13,7 @@
     "skipLibCheck": false,
     "sourceMap": true,
     "strict": true,
-    "target": "es5"
+    "target": "es2020"
   },
   "exclude": ["**/node_modules", "**/typechain"],
   "include": ["src/**/*", "test/**/*"]

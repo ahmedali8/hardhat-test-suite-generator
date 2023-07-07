@@ -43,7 +43,7 @@ export function genFixtureFile(contract: Contract, config: HelperConfig): FileDe
       `${pascalCase(contract.name)}.fixture.ts`,
     ),
     contents: `
-      import type { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
+      import type { SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
       import { ethers } from "hardhat";
       import type { ${pascalCase(contract.name)} } from "${join(
       "..",
@@ -85,6 +85,7 @@ export function genFixtureFile(contract: Contract, config: HelperConfig): FileDe
         const ${camelCase(contract.name)}: ${pascalCase(contract.name)} = await ${pascalCase(
       contract.name,
     )}Factory.connect(deployer).deploy(...args) as ${pascalCase(contract.name)};
+        await ${camelCase(contract.name)}.waitForDeployment();
 
         return { ${camelCase(contract.name)} };
       }
@@ -182,7 +183,7 @@ export function genSharedTypesFile(contracts: Contract[], config: HelperConfig):
   return {
     path: join(config.outDirAbs, "shared", "types.ts"),
     contents: `
-      import type { SignerWithAddress } from "@nomiclabs/hardhat-ethers/dist/src/signer-with-address";
+      import type { SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
       ${contracts
         .map((c) => c.name)
         .map(
@@ -228,7 +229,7 @@ export function genIndexFile(contracts: Contract[], config: HelperConfig): FileD
     path: join(config.outDirAbs, "unit", "index.ts"),
     contents: `
       import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
-      import type { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
+      import type { SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
       import { ethers } from "hardhat";
 
       import type { Contracts, Signers } from "${join("..", "shared", "types")}";
